@@ -5,6 +5,13 @@ import { Link } from "react-router-dom"
 import Logo from '../../assets/Logo.jpg'
 
 const Header = props => {
+
+    const logout =()=>{
+        localStorage.clear()
+        window.location.reload()
+    }
+
+
     return(
         <header className="header">
             <div className="wrap">
@@ -20,6 +27,9 @@ const Header = props => {
                         <Link to="/registration">
                             Register
                         </Link>
+                    </li>
+                    <li>
+                        <button onClick={logout}>Logout</button>
                     </li>
                 </ul>
             </div>
