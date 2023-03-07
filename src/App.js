@@ -2,7 +2,8 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 
 import MainLayout from "./layouts/MainLayout";
-import Header from "./components";
+import HomepageLayout from "./layouts/HomepageLayout";
+
 import Homepage from "./pages/Homepage";
 import Registration from "./pages/Registration";
 
@@ -12,10 +13,15 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route exact path="/" element={<MainLayout />}>
-        <Route path="" element={<Homepage />} />
-        <Route path="/registration" element={<Registration />} />
+
+        <Route exact path="/" element={<HomepageLayout />}>
+          <Route path="" element={<Homepage />} />
         </Route >
+
+        <Route path="/" element={<MainLayout />}>
+          <Route path="/registration" element={<Registration />} />
+        </Route>
+        
       </Routes>
     </div>
   );
