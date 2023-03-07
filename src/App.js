@@ -8,6 +8,7 @@ import Homepage from "./pages/Homepage";
 import Registration from "./pages/Registration";
 
 import './default.scss'
+import SignIn from "./pages/SignIn";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
 
         <Route path="/" element={<MainLayout />}>
           <Route path="/registration" element={<Registration />} />
+          <Route path="/signin" element={<SignIn />} />
         </Route>
         
       </Routes>
