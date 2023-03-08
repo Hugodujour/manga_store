@@ -1,11 +1,30 @@
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 
+import MainLayout from "./layouts/MainLayout";
+import HomepageLayout from "./layouts/HomepageLayout";
+
+import Homepage from "./pages/Homepage";
+import Registration from "./pages/Registration";
+
+import './default.scss'
+import SignIn from "./pages/SignIn";
 
 function App() {
   return (
     <div className="App">
-      <h1>C'est l'application !</h1>
-      <p>test</p>
-      <p>test2</p>
+      <Routes>
+
+        <Route exact path="/" element={<HomepageLayout />}>
+          <Route path="" element={<Homepage />} />
+        </Route >
+
+        <Route path="/" element={<MainLayout />}>
+          <Route path="/registration" element={<Registration />} />
+          <Route path="/signin" element={<SignIn />} />
+        </Route>
+        
+      </Routes>
     </div>
   );
 }
